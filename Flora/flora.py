@@ -1,6 +1,6 @@
-
-from RollInterface import *
+from rollInterface import *
 from .flora_tables import *
+
 
 class Flora(object):
     def __init__(self):
@@ -205,59 +205,72 @@ class Flora(object):
             use["preparation"] = select(medicinal_preparation_table)
         return use
 
-
-    def toString(self):
-        formattedOutput = "This %s, %s flora is a %s sized, %s plant.\n" % (self.edibility["type"], self.sentience, self.size, self.type)
+    def to_string(self):
+        formattedOutput = "This %s, %s flora is a %s sized, %s plant.\n" % (
+        self.edibility["type"], self.sentience, self.size, self.type)
         if self.edibility["type"] == "Medicinal":
-            formattedOutput += "It can be used as %s medicine by creating a %s out of it.\n" %(self.edibility["property"], self.edibility["preparation"])
+            formattedOutput += "It can be used as %s medicine by creating a %s out of it.\n" % (
+            self.edibility["property"], self.edibility["preparation"])
         elif self.edibility["type"] == "Edible":
-            formattedOutput += "It can be eaten safely by %s preparation.\n" %(self.edibility["preparation"])
+            formattedOutput += "It can be eaten safely by %s preparation.\n" % (self.edibility["preparation"])
         formattedOutput += "It can primarily be found in a %s environment, and also %sly be found in a %s environment\n" \
-                           %(self.habitat["primary"],self.habitat["sub"]["rarity"], self.habitat["sub"]["type"]) + \
+                           % (self.habitat["primary"], self.habitat["sub"]["rarity"], self.habitat["sub"]["type"]) + \
                            "It has a %s based diet utilizing %s.\n" % (self.diet["type"], self.diet["tropism"])
-        return "GENERAL:\n" + formattedOutput + "BODY:\n" + self.bodyToString() + \
-               "LEAVES:\n" + self.leavesToString() + "REPRODUCTION:\n" + self.reproductionToString()
-    def bodyToString(self):
+        return "GENERAL:\n" + formattedOutput + "BODY:\n" + self._body_to_string() + \
+               "LEAVES:\n" + self._leaves_to_string() + "REPRODUCTION:\n" + self._reproduction_to_string()
+
+    def _body_to_string(self):
         formattedOutput = ""
         if self.body["roots"] != "None":
-            formattedOutput += "The %s surfaced, %s %s roots have a %s pattern to them. \n" % (self.body["roots"]["surface"], self.body["roots"]["color"],self.body["roots"]["type"],  self.body["roots"]["pattern"])
+            formattedOutput += "The %s surfaced, %s %s roots have a %s pattern to them. \n" % (
+            self.body["roots"]["surface"], self.body["roots"]["color"], self.body["roots"]["type"],
+            self.body["roots"]["pattern"])
         else:
             formattedOutput += "The plant has no branches.\n"
 
         if self.body["main"] != "None":
-            formattedOutput += "The %s surfaced, %s %s-like body has a %s pattern to it. \n" % (self.body["main"]["surface"], self.body["main"]["color"], self.body["main"]["type"],  self.body["main"]["pattern"])
+            formattedOutput += "The %s surfaced, %s %s-like body has a %s pattern to it. \n" % (
+            self.body["main"]["surface"], self.body["main"]["color"], self.body["main"]["type"],
+            self.body["main"]["pattern"])
         else:
             formattedOutput += "The plant has no main body structure.\n"
 
         if self.body["branches"] != "None":
-            formattedOutput += "The %s surfaced, %s %s branches have a %s growing pattern to them. \n" % (self.body["branches"]["surface"], self.body["branches"]["color"], self.body["branches"]["type"],  self.body["branches"]["pattern"])
+            formattedOutput += "The %s surfaced, %s %s branches have a %s growing pattern to them. \n" % (
+            self.body["branches"]["surface"], self.body["branches"]["color"], self.body["branches"]["type"],
+            self.body["branches"]["pattern"])
         else:
             formattedOutput += "The plant has no roots.\n"
         return formattedOutput
-    def leavesToString(self):
+
+    def _leaves_to_string(self):
         formattedOutput = ""
         if self.leaves != None:
             formattedOutput += "It's %s, %s leaves are %s shaped and grow in %s at the %s of the plant.\n" % (
-            self.leaves["color"], self.leaves["type"], self.leaves["shape"], self.leaves["numbers"],
-            self.leaves["location"]) + \
+                self.leaves["color"], self.leaves["type"], self.leaves["shape"], self.leaves["numbers"],
+                self.leaves["location"]) + \
                                "They have a %s pattern, a %s topside, and %s underside with a %s margin around the edge of the leaf.\n" \
                                % (
-                               self.leaves["pattern"], self.leaves["surface_topside"], self.leaves["surface_underside"],
-                               self.leaves["margin"]) + \
+                                   self.leaves["pattern"], self.leaves["surface_topside"],
+                                   self.leaves["surface_underside"],
+                                   self.leaves["margin"]) + \
                                "The veins in the leaf are of a %s pattern.\n" % (self.leaves["venation"])
         else:
             formattedOutput += "The plant has no leaves.\n"
         return formattedOutput
-    def reproductionToString(self):
+
+    def _reproduction_to_string(self):
         formattedOutput = ""
         if self.reproduction["type"] == "Seeds":
             formattedOutput += \
                 "The %s, %s %s shaped flowers grow in %s at the %s of the branches.\n" \
                 % (
-                self.reproduction["flower_size"], self.reproduction["flower_color"], self.reproduction["flower_shape"],
-                self.reproduction["flower_type"], self.reproduction["flower_location"]) + \
+                    self.reproduction["flower_size"], self.reproduction["flower_color"],
+                    self.reproduction["flower_shape"],
+                    self.reproduction["flower_type"], self.reproduction["flower_location"]) + \
                 "They have %s blooming, %s smelling flowers with %s pistils and %s stamens.\n" \
-                % (self.reproduction["flower_frequency"], self.reproduction["flower_scent"], self.reproduction["flower_pistils"],
+                % (self.reproduction["flower_frequency"], self.reproduction["flower_scent"],
+                   self.reproduction["flower_pistils"],
                    self.reproduction["flower_stamens"])
 
             if self.reproduction["petal_number"] > 0:
@@ -267,7 +280,7 @@ class Flora(object):
                        self.reproduction["petal_surface_inside"], self.reproduction["petal_surface_outside"])
 
             formattedOutput += "It reproduces with seeds from %s and uses %s to disperse them.\n" % (
-            self.reproduction["seed_type"], self.reproduction["seed_dispersal"])
+                self.reproduction["seed_type"], self.reproduction["seed_dispersal"])
         else:
             formattedOutput += "It has no flowers, so it reproduces through %s" % (self.reproduction["type"])
         return formattedOutput

@@ -5,23 +5,27 @@ I've also added a ToString method in the Flora class to output  human readable o
 I'm in the process of adding the FaunaTables, and the Fauna Class as well as Fungus Tables and Fungus Class.
 """
 
-from Flora.Flora import *
+from Flora.flora import *
+
 
 def main():
-    flora()
+    createFlora()
 
-def flora():
+
+def createFlora():
     flora = Flora()
     while True:
         try:
             flora.generate()
-            flora.toString()
+            flora.to_string()
         except:
             print("broke")
         else:
+            # if flora.habitat["primary"] == "Aquatic":
             break
     # pprint(vars(flora))
-    print(flora.toString())
+    print(flora.to_string())
+
 
 if __name__ == "__main__":
     # execute only if run as a script
