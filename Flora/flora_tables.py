@@ -299,10 +299,9 @@ edible_preparation_table = {"Edible":
 medicinal_properties_table = {'Abortifacient': 0.0, 'Acrid': 0.01,
         'Adjuvant': 0.02, 'Alterative': 0.03, 'Analgesic': 0.04, 'Anaphrodisiac': 0.05, 'Anesthetic': 0.06, 'Anodyne': 0.07, 'Anthelmintic': 0.08, 'Antibiotic': 0.09, 'Anticoagulant': 0.1, 'Antiemetic': 0.11, 'Antifungal': 0.12, 'Antihydrotic': 0.13, 'Antilithic': 0.14, 'Antinauseant': 0.15, 'Antiperodic': 0.16, 'Antiphlogistic': 0.17, 'Antipyretic': 0.18, 'Antiscorbutic': 0.19, 'Antiscrufulous': 0.2, 'Antiseptic': 0.21, 'Antispasmodic': 0.22, 'Antitussive': 0.23, 'Aperient': 0.24, 'Aphrodisiac': 0.25, 'Appetizer': 0.26, 'Aromatic': 0.27, 'Astringent': 0.28, 'Balsam': 0.29, 'Bitter': 0.3, 'Bitter tonic.': 0.31, 'Calmative': 0.32, 'Cardiac': 0.33, 'Carminative.': 0.34, 'Cathartic': 0.35, 'Caustic': 0.36, 'Cholagogue': 0.37, 'Coagulant': 0.38, 'Colourant': 0.39, 'Counterirritant': 0.4, 'Demulcent': 0.41, 'Deodourant': 0.42, 'Depressant': 0.43, 'Depurative': 0.44, 'Detergent': 0.45, 'Diaphoretic': 0.46, 'Digestive': 0.47, 'Disinfectant': 0.48, 'Diuretic': 0.49, 'Dye': 0.5, 'Emetic': 0.51, 'Emmenagogue': 0.52, 'Emollient': 0.53, 'Errihine': 0.54, 'Euphoriant': 0.55, 'Expectorant': 0.56, 'Febrifuge': 0.57, 'Fungicide': 0.58, 'Galactagogue': 0.59, 'Glue': 0.6, 'Haemostatic': 0.61, 'Hallucinogen': 0.62, 'Hepatic': 0.63, 'Hydragogue': 0.64, 'Hypnotic': 0.65, 'Insecticide': 0.66, 'Irritant': 0.67, 'Laxative': 0.68, 'Mucilaginous': 0.69, 'Mystical / Other': 0.7, 'Narcotic': 0.71, 'Nauseant': 0.72, 'Nephretic': 0.73, 'Nervine': 0.74, 'Oil': 0.75, 'Oxytocic': 0.76, 'Pectoral': 0.77, 'Poison': 0.78, 'Purgative': 0.79, 'Refridgerant': 0.8, 'Restorative': 0.81, 'Rubefacient': 0.82, 'Sedative': 0.83, 'Sialagogue': 0.84, 'Soporific': 0.85, 'Specific': 0.86, 'Stimulant': 0.87, 'Stomachic': 0.88, 'Vasodilator': 0.89, 'Vermicide': 0.9, 'Vermifuge': 0.91, 'Vesicant': 0.92, 'Vulnerary': 0.93, 'Wax': 0.94, "Mystical / Other": 0.95, "Roll Twice": 1 }
 # Table 10c
-medicinal_preparation_table = {"Bath": 0.05, "Cold Compress": 0.10,
-        "Cold Extract": 0.15, "Crushed": 0.20, "Decoction": 0.25,
-        "Essence": 0.28, "Fomentation": 0.35, "Grated": 0.38, "Ground": 0.45,
-        "Infusion": 0.51, "Juice": 0.55, "Ointment": 0.60, "Poultice": 0.65,
-        "Powder": 0.73, "Rubbed": 0.76, "Syrup": 0.80, "Tincture": 0.85,
-        "Vapour / Smoke": 0.89, "Wash": 0.93, "Whole": 0.95, "Other": 0.98,
-        "Roll Twice": 1}
+medicinal_preparation_table = {"Bathing in": 0.05, "Cold Compressing": 0.10,
+        "Cold Extracting": 0.15, "Crushing": 0.20, "Decocting": 0.25,
+        "using the Essence of": 0.28, "Fomentating": 0.35, "Grating": 0.38, "Grinding": 0.45,
+        "Infusing": 0.51, "Juicing": 0.55, "creating an Ointment from": 0.60, "Poulticing": 0.65,
+        "creating a Powder from": 0.73, "Rubbing": 0.76, "creating a Syrup from": 0.80, "creating a Tincture from": 0.85,
+        "Smoking": 0.89, "Washing with": 0.93, "Eating": 1}

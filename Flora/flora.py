@@ -199,10 +199,10 @@ class Flora(object):
         return use
 
     def __str__(self):
-        formattedOutput = "This %s, %s flora is a %s sized, %s plant.\n" % (
-        self.edibility["type"], self.sentience, self.size, self.type)
+        formattedOutput = "This %s, %s flora is a %s sized, %s plant that can be found in %s groupings.\n" % (
+        self.edibility["type"], self.sentience, self.size, self.type, self.grouping)
         if self.edibility["type"] == "Medicinal":
-            formattedOutput += "It can be used as %s medicine by creating a %s out of it.\n" % (
+            formattedOutput += "It can be used as %s medicine by %s it.\n" % (
             self.edibility["property"], self.edibility["preparation"])
         elif self.edibility["type"] == "Edible":
             formattedOutput += "It can be eaten safely by %s preparation.\n" % (self.edibility["preparation"])
