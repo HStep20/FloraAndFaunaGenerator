@@ -2,8 +2,11 @@
 A "Scientifically Accurate" Flora and (soon to be) Fauna Generator made with python.
 
 Instead of rewriting my original one from scratch, I refactored and expanded https://github.com/cutecprog's version.
+
 I broke up the RollInterface, and the Flora into individual classes.
-I've also added a ToString method in the Flora class to output  human readable output text to the generator.
+
+I've also added a str method in the Flora class to output human readable text to the console.
+
 I'm in the process of adding the FaunaTables, and the Fauna Class as well as Fungus Tables and Fungus Class.
 
 Example Output Results:
