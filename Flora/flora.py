@@ -205,7 +205,7 @@ class Flora(object):
             use["preparation"] = select(medicinal_preparation_table)
         return use
 
-    def to_string(self):
+    def __str__(self):
         formattedOutput = "This %s, %s flora is a %s sized, %s plant.\n" % (
         self.edibility["type"], self.sentience, self.size, self.type)
         if self.edibility["type"] == "Medicinal":
@@ -261,15 +261,15 @@ class Flora(object):
 
     def _reproduction_to_string(self):
         formattedOutput = ""
-        if self.reproduction["type"] == "Seeds":
+        if (self.reproduction["type"] == "Seeds"):
             formattedOutput += \
-                "The %s, %s %s shaped flowers grow in %s at the %s of the branches.\n" \
+                "The %s, %s, %s shaped flowers grow in %s at the %s of the branches.\n" \
                 % (
                     self.reproduction["flower_size"], self.reproduction["flower_color"],
                     self.reproduction["flower_shape"],
                     self.reproduction["flower_type"], self.reproduction["flower_location"]) + \
-                "They have %s blooming, %s smelling flowers with %s pistils and %s stamens.\n" \
-                % (self.reproduction["flower_frequency"], self.reproduction["flower_scent"],
+                "The %s smelling flowers have %s blooming,  with %s pistils and %s stamens.\n" \
+                % ( self.reproduction["flower_scent"], self.reproduction["flower_frequency"],
                    self.reproduction["flower_pistils"],
                    self.reproduction["flower_stamens"])
 

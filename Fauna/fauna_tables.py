@@ -1,5 +1,11 @@
-#Table 1
+"""
+Credits:
+Random Flora Tables v1.1 by Sebastian Romu
+https://blog.entorais.world/2016/08/02/random-animals/
 
+"""
+
+#Table 1
 skeletal_table = {
     'Endoskeleton': .80,
     'Exoskeleton': .95,

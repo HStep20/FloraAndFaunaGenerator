@@ -13,18 +13,17 @@ def main():
 
 
 def createFlora():
-    flora = Flora()
+    newPlant = Flora()
     while True:
         try:
-            flora.generate()
-            flora.to_string()
+            newPlant.generate()
         except:
             print("broke")
         else:
             # if flora.habitat["primary"] == "Aquatic":
             break
-    # pprint(vars(flora))
-    print(flora.to_string())
+    #pprint(vars(newPlant))
+    print(newPlant)
 
 
 if __name__ == "__main__":
