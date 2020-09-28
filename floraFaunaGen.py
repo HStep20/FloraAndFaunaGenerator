@@ -14,15 +14,8 @@ def main():
 
 def createFlora():
     newPlant = Flora()
-    while True:
-        try:
-            newPlant.generate()
-        except:
-            print("broke")
-        else:
-            # if flora.habitat["primary"] == "Aquatic":
-            break
-    #pprint(vars(newPlant))
+    newPlant.generate()
+    pprint(vars(newPlant))
     print(newPlant)
 
 

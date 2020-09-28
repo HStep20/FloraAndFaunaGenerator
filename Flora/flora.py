@@ -50,14 +50,7 @@ class Flora(object):
             self.habitat["sub"]["type"] = select(subhabitat_table["Aquatic"])
         else:
             # Table 2b
-            if random() <= 0.10:
-                # 10% chance of two subhabitats
-                self.habitat["sub"] = roll_twice(subhabitat_table["Other"])
-                self.habitat["sub"][0] = {"type": self.habitat["sub"][0]}
-                self.habitat["sub"][1] = {"type": self.habitat["sub"][1]}
-            else:
-                self.habitat["sub"]["type"] = select( \
-                    subhabitat_table["Other"])
+            self.habitat["sub"]["type"] = select(subhabitat_table["Other"])
         # Table 2c
         if type(self.habitat["sub"]) is list:
             self.habitat["sub"][0]["rarity"] = select(rarity_table)
@@ -261,7 +254,7 @@ class Flora(object):
 
     def _reproduction_to_string(self):
         formattedOutput = ""
-        if (self.reproduction["type"] == "Seeds"):
+        if "Seeds" in self.reproduction["type"] and "None" not in self.reproduction["flower_type"]:
             formattedOutput += \
                 "The %s, %s, %s shaped flowers grow in %s at the %s of the branches.\n" \
                 % (
