@@ -11,13 +11,13 @@ import os, sys
 
 def main():
     while True:
-        user_input = input("Enter 'flora' for a new plant, 'fauna' for a new animal, or 'exit' to quit...")
+        user_input = input("Enter 'flora' for a new plant, 'fauna' for a new animal, or 'exit' to quit.\n")
         if user_input == 'flora':
             os.system('cls')
-            createFlora()
+            print(createFlora())
         elif user_input == 'fauna':
             os.system('clear')
-            createFauna()
+            print(createFauna())
         elif user_input == 'exit':
             print("Exiting program")
             sys.exit()
