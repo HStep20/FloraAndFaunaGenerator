@@ -395,25 +395,25 @@ eyes = {
 # table 6
 limbs = {
     "Endoskeleton": {
-        "0 Limbs": .08,
-        "2 Limbs": .14,
-        "4 Limbs": .95,
-        "6 Limbs": .99,
-        "8 Limbs": 1
+        "0": .08,
+        "2": .14,
+        "4": .95,
+        "6": .99,
+        "8": 1
     },
     "Exoskeleton": {
-        "0 Limbs": .05,
-        "2 Limbs": .15,
-        "4 Limbs": .60,
-        "6 Limbs": .90,
-        "8 Limbs": 1
+        "0": .05,
+        "2": .15,
+        "4": .60,
+        "6": .90,
+        "8": 1
     },
     "Muscoskeleton": {
-        "0 Limbs": .40,
-        "2 Limbs": .60,
-        "4 Limbs": .80,
-        "6 Limbs": .90,
-        "8 Limbs": 1
+        "0": .40,
+        "2": .60,
+        "4": .80,
+        "6": .90,
+        "8": 1
     }
 }
 # table 6a
@@ -782,6 +782,8 @@ reproduction = {
         "Larvae": 1
     }
 }
+#TODO: add egg output, since its missing now
+
 # table 10c
 sexual_type = {
     "Two Sexes":.75,

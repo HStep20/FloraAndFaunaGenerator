@@ -22,7 +22,7 @@ def createFlora():
 def createFauna():
     newAnimal = Fauna()
     newAnimal.generate()
-    pprint(vars(newAnimal))
+    print(newAnimal)
 
 if __name__ == "__main__":
     # execute only if run as a script

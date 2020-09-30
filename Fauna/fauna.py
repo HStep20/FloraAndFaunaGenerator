@@ -101,7 +101,22 @@ class Fauna(object):
         self.reproduction["sexual_type"] = select(sexual_type)
         self.reproduction["reproduction_style"] = select(reproduction[self.body_temperature])
 
-#TODO: create a human readable print() method
     def __str__(self):
-        pass
-        print("issa animal")
+        # todo - add neck part, if nex exists. Add tail part if tail exists, hivemind sentient, if it exists
+        return \
+                "'name' is a %s %s with a %s which can often be found living in a %s habitat, and occasionally found in %s.\n" \
+                %(self.body_temperature, self.diet, self.skeleton, self.habitat["primary"], self.habitat["sub"]) + \
+                "These %s minded, %s animals live a %s lifestyle, and are often %s towards other animals.\n" \
+                %(self.sentience["sentience"], self.social_type, self.territoriality, self.temperament) + \
+                "They are %s beasts, often measuring %s meters on average and weighing in at %s kilograms.\n"\
+                %(self.body_physical["mass"],  self.body_physical["body_length"], self.body_physical["massKG"]) + \
+                "It's %s framed, %s shaped body has a %s symmetry to it.\n"\
+                % (self.body_physical["frame"], self.body_physical["shape"], self.body_physical["symmetry"]) + \
+                "They have %s styled eyes on their head, with a %s reaching %s meters on average.\n"\
+                % (self.body_features["eyes"], self.body_features["neck"], self.body_features["neck_length"]) + \
+                "They have %s %s %s styled appendages which average at %s meters long.\n" \
+                % (self.body_features["limbs"], self.body_features["limb_length"], self.body_features["appendages"], self.body_features["limb_length_meters"]) + \
+                "They have a %s, %s body with a %s coverage.\n"\
+                % (self.body_appearance["coloration"], self.body_appearance["pattern"], self.body_appearance["coverage"]) + \
+                "Their mating preference is %s and they reproduce via %s\n"\
+                % (self.reproduction["sexual_type"], self.reproduction["reproduction_style"])
