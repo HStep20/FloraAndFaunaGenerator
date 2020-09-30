@@ -4,6 +4,7 @@ import random
 
 
 class Fauna(object):
+    rounding = 2
     def __init__(self):
         self.skeleton = ""
         self.body_temperature = ""
@@ -15,8 +16,8 @@ class Fauna(object):
         self.body_physical = {}
         self.body_features = {}
         self.body_appearance = {}
-        # self.sentience = ""
-        # self.reproduction = {}
+        self.sentience = {}
+        self.reproduction = {}
 
     def generate(self):
         self.skeleton = select(skeletal_table)
@@ -29,8 +30,8 @@ class Fauna(object):
         self._generate_physical_body()
         self._generate_body_features()
         self._generate_body_appearance()
-        # self.sentience =
-        # self.reproduction = {}
+        self._generate_sentience()
+        self._generate_reproduction()
 
     def _generate_body_temperature(self):
         if self.skeleton == "Exoskeleton":
@@ -50,25 +51,26 @@ class Fauna(object):
 
     def _generate_physical_body(self):
         self.body_physical["mass"] = select(body_mass[self.body_temperature][self.skeleton])
+        if self.body_physical["mass"] == "Tiny" or self.body_physical["mass"] == "Miniscule":
+            self.rounding = 4
         self.body_physical["massKG"] = \
             round(random.uniform(body_mass_kg[self.body_physical["mass"]]["min"],
-                                 body_mass_kg[self.body_physical["mass"]]["max"]), 2)
+                                 body_mass_kg[self.body_physical["mass"]]["max"]), self.rounding)
         self.body_physical["symmetry"] = select(body_symmetry[self.skeleton])
         self.body_physical["frame"] = select(body_frame[self.diet])
         self.body_physical["shape"] = select(body_shape[self.skeleton])
         self.body_physical["bmi"] = body_mass_index[self.body_physical["shape"]][self.body_physical["frame"]]
         self.body_physical["body_length"] = round(
-            (int(self.body_physical["massKG"]) / self.body_physical["bmi"]) ** (1 / 3), 2)
+            (int(self.body_physical["massKG"]) / self.body_physical["bmi"]) ** (1 / 3), self.rounding)
 
     def _generate_body_features(self):
         self.body_features["neck"] = select(head[self.skeleton])
-        print(select(head[self.skeleton]))
         if self.body_features["neck"] != "No Neck":
             self.body_features["neck_length_percent"] = \
                 round(random.uniform(neck[self.body_features["neck"]]["min"],
-                                     neck[self.body_features["neck"]]["max"]), 2)
+                                     neck[self.body_features["neck"]]["max"]), self.rounding)
             self.body_features["neck_length"] = \
-                round((self.body_physical["body_length"] * self.body_features["neck_length_percent"]), 2)
+                round((self.body_physical["body_length"] * self.body_features["neck_length_percent"]), self.rounding)
         self.body_features["eyes"] = select(eyes[self.skeleton])
         self.body_features["limbs"] = select(limbs[self.skeleton])
         self.body_features["tail"] = select(tail[self.skeleton])
@@ -82,14 +84,24 @@ class Fauna(object):
                 (random.uniform(limb_length_percent[self.body_features["limb_length"]]["min"],
                                 limb_length_percent[self.body_features["limb_length"]]["max"])
                   * self.body_physical["body_length"])
-                , 2)
+                , self.rounding)
         self.body_features["appendages"] = select(appendages[self.skeleton][self.diet])
 
     def _generate_body_appearance(self):
         self.body_appearance["coverage"] = select(body_coverage[self.body_temperature][self.skeleton])
         self.body_appearance["coloration"] = select(coloration[self.body_appearance["coverage"]])
-        # self.body_appearance["pattern"] =
+        self.body_appearance["pattern"] = select(pattern)
 
+    def _generate_sentience(self):
+        self.sentience["sentience"] = select(sentience[self.body_temperature][self.diet])
+        if self.sentience == "Hive":
+            self.sentience["hivemind"] = select(sentience_of_hive_mind[self.diet][self.sentience["sentience"]])
+
+    def _generate_reproduction(self):
+        self.reproduction["sexual_type"] = select(sexual_type)
+        self.reproduction["reproduction_style"] = select(reproduction[self.body_temperature])
+
+#TODO: create a human readable print() method
     def __str__(self):
         pass
         print("issa animal")

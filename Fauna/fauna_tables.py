@@ -679,18 +679,112 @@ coloration = {
         "Purple": 1
     }
 }
-#TODO: implement last two tables
 # table 7b
-pattern = {}
+pattern = {
+    "Mottled": .20,
+    "Spots": .40,
+    "Stripes": .60,
+    "Patches": .74,
+    "Ornate": .81,
+    "Iridescent": .87,
+    "Florescent": .89,
+    "Phased": 1
+}
 # table 8
 # table 8a
 # table 9
-sentience = {}
+sentience = {
+    "Warm Blooded": {
+        "Carnivore": {
+            "Instinctual": .05,
+            "Hive": .06,
+            "Animal": .75,
+            "Cunning": .99,
+            "Sapient": 1
+        },
+        "Omnivore": {
+            "Instinctual": .10,
+            "Hive": .11,
+            "Animal": .70,
+            "Cunning": .98,
+            "Sapient": 1
+
+        },
+        "Herbivore": {
+            "Instinctual": .25,
+            "Hive": .26,
+            "Animal": .79,
+            "Cunning": .99,
+            "Sapient": 1
+
+        }
+    },
+    "Cold Blooded": {
+        "Carnivore": {
+            "Instinctual": .20,
+            "Hive": .22,
+            "Animal": .84,
+            "Cunning": .98,
+            "Sapient": 1
+        },
+        "Omnivore": {
+            "Instinctual": .30,
+            "Hive": .33,
+            "Animal": .79,
+            "Cunning": .99,
+            "Sapient": 1
+
+        },
+        "Herbivore": {
+            "Instinctual": .40,
+            "Hive": .42,
+            "Animal": .74,
+            "Cunning": .99,
+            "Sapient": 1
+
+        }
+
+    }
+}
 # table 9a
-sentience_of_hive_mind = {}
+sentience_of_hive_mind = {
+    "Carnivore": {
+        "Instinctual": .50,
+        "Animal": .80,
+        "Cunning": .99,
+        "Sapient": 1
+    },
+    "Omnivore": {
+        "Instinctual": .40,
+        "Animal": .70,
+        "Cunning": .99,
+        "Sapient": 1
+    },
+    "Herbivore":{
+        "Instinctual": .30,
+        "Animal": .60,
+        "Cunning": .99,
+        "Sapient": 1
+    }
+}
 # table 10
-reproduction = {}
-# table 10b
-number_of_young = {}
+reproduction = {
+    "Warm Blooded":{
+        "Live Birth": .70,
+        "Eggs": .77,
+        "Brood Eggs": .96,
+        "Larvae": 1
+    },
+    "Cold Blooded":{
+        "Live Birth" : .10,
+        "Eggs": .60,
+        "Brood Eggs": .90,
+        "Larvae": 1
+    }
+}
 # table 10c
-sexual_type = {}
+sexual_type = {
+    "Two Sexes":.75,
+    "Hermaphrodites": .95,
+    "Asexual": 1
+}
