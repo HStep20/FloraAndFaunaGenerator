@@ -34,7 +34,7 @@ habitat_table = {
 # tables 2a, 2b
 subhabitat_table = {
     "Aquatic":
-        {"Salt-Water": 0.40, "Fresh Water": 0.80, "Brackish": 1},
+        {"Salt-Water": 0.40, "Fresh Water": 0.80, "Brackish Water": 1},
     "Other":
         {"Desert / Waste": 0.10, "Plains / Savannah": 0.32,
          "Marsh / Swamp / Bog": 0.37, "Forest / Jungle": 0.68,
@@ -419,15 +419,15 @@ limbs = {
 # table 6a
 tail = {
     "Endoskeleton": {
-        "Tail": .85,
+        "A Tail": .85,
         "No Tail": 1
     },
     "Exoskeleton": {
-        "Tail": .1,
+        "A Tail": .1,
         "No Tail": 1
     },
     "Muscoskeleton": {
-        "Tail": .2,
+        "A Tail": .2,
         "No Tail": 1
     }
 }

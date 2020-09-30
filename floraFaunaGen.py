@@ -22,6 +22,7 @@ def createFlora():
 def createFauna():
     newAnimal = Fauna()
     newAnimal.generate()
+    pprint(vars(newAnimal))
     print(newAnimal)
 
 if __name__ == "__main__":
