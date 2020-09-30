@@ -7,11 +7,22 @@ I'm in the process of adding the FaunaTables, and the Fauna Class as well as Fun
 
 from Flora.flora import *
 from Fauna.fauna import *
+import os, sys
 
 def main():
-    #print(createFlora())
-    createFauna()
-
+    while True:
+        user_input = input("Enter 'flora' for a new plant, 'fauna' for a new animal, or 'exit' to quit...")
+        if user_input == 'flora':
+            os.system('cls')
+            createFlora()
+        elif user_input == 'fauna':
+            os.system('clear')
+            createFauna()
+        elif user_input == 'exit':
+            print("Exiting program")
+            sys.exit()
+        else:
+            print(user_input + " is not a valid entry")
 
 
 def createFlora():
@@ -22,7 +33,6 @@ def createFlora():
 def createFauna():
     newAnimal = Fauna()
     newAnimal.generate()
-    pprint(vars(newAnimal))
     print(newAnimal)
 
 if __name__ == "__main__":

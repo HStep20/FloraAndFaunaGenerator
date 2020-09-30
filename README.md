@@ -9,7 +9,18 @@ I've also added a str method in the Flora class to output human readable text to
 
 I'm in the process of adding the FaunaTables, and the Fauna Class as well as Fungus Tables and Fungus Class.
 
-Example Output Results:
+Example Fauna Results:
+
+	This animal is a Cold Blooded Herbivore with a Endoskeleton. They can often be found living in a Terrestrial habitat, and occasionally found in Forest / Jungle.
+	These Cunning minded, Medium Group animals live a Migratory lifestyle, and are often Skittish towards other animals.
+	They are Large beasts, often measuring 3.88 meters on average and weighing in at 466.79 kilograms.
+	It's Light framed, Flat shaped body has a Linear symmetry to it.
+	They have Inset/Forward styled eyes on their head, with a Short Neck reaching 0.5 meters on average and they have A Tail
+	They have 4 Long Hoof styled appendages which average at 5.17 meters long.
+	They have a Brown Stripes patterned body with a Scaly/Pebbled coverage.
+	Their mating preference is Two Sexes and they reproduce via Brood Eggs
+
+Example Flora Results:
 
     GENERAL:
     This Edible, Non-Sentient flora is a Average sized, Woody plant.
