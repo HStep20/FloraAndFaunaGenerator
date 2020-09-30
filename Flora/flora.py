@@ -205,7 +205,7 @@ class Flora(object):
             formattedOutput += "It can be used as %s medicine by %s it.\n" % (
             self.edibility["property"], self.edibility["preparation"])
         elif self.edibility["type"] == "Edible":
-            formattedOutput += "It can be eaten safely by %s preparation.\n" % (self.edibility["preparation"])
+            formattedOutput += "It can be eaten safely by preparing it %s .\n" % (self.edibility["preparation"])
         formattedOutput += "It can primarily be found in a %s environment, and also %sly be found in a %s environment\n" \
                            % (self.habitat["primary"], self.habitat["sub"]["rarity"], self.habitat["sub"]["type"]) + \
                            "It has a %s based diet utilizing %s.\n" % (self.diet["type"], self.diet["tropism"])

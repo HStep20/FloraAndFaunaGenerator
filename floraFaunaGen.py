@@ -6,18 +6,23 @@ I'm in the process of adding the FaunaTables, and the Fauna Class as well as Fun
 """
 
 from Flora.flora import *
-
+from Fauna.fauna import *
 
 def main():
-    createFlora()
+    #print(createFlora())
+    createFauna()
+
 
 
 def createFlora():
     newPlant = Flora()
     newPlant.generate()
-    pprint(vars(newPlant))
-    print(newPlant)
+    return newPlant
 
+def createFauna():
+    newAnimal = Fauna()
+    newAnimal.generate()
+    pprint(vars(newAnimal))
 
 if __name__ == "__main__":
     # execute only if run as a script
