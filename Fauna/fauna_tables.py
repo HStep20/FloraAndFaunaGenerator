@@ -227,7 +227,14 @@ body_mass = {
         }
     }
 }
-
+body_mass_kg = {
+    "Huge": {"min": 1000, "max": 10000},
+    "Large": {"min": 100, "max": 1000},
+    "Average": {"min": 10, "max": 100},
+    "Small": {"min": .1, "max": 10},
+    "Tiny": {"min": .001, "max": .1},
+    "Miniscule": {"min": 0, "max": .001}
+}
 # Table 4a
 body_symmetry = {
     "Endoskeleton": {
@@ -336,26 +343,32 @@ body_mass_index = {
 # table 5
 head = {
     "Endoskeleton": {
-        "None": .01,
+        "No Neck": .01,
         "Tiny Neck": .03,
         "Short Neck": .30,
         "Medium Neck": .90,
         "Long Neck": 1
     },
     "Exoskeleton": {
-        "None": .20,
+        "No Neck": .20,
         "Tiny Neck": .94,
         "Short Neck": .97,
         "Medium Neck": .99,
         "Long Neck": 1
     },
     "Muscoskeleton": {
-        "None": .85,
+        "No Neck": .85,
         "Tiny Neck": .97,
         "Short Neck": .98,
         "Medium Neck": .99,
         "Long Neck": 1
     }
+}
+neck = {
+        "Tiny Neck": {"min" : 0, "max": .10},
+        "Short Neck": {"min" :.10, "max": .25},
+        "Medium Neck": {"min" :.25, "max": .75},
+        "Long Neck": {"min" :.75, "max": 1.5}
 }
 # table 5a
 eyes = {
@@ -433,7 +446,7 @@ swimming = {
     "Can't Swim": 1
 }
 
-# table 6
+# table 6d
 limb_length = {
     "Carnivore": {
         "Vestigial": .01,
@@ -458,22 +471,45 @@ limb_length = {
     }
 }
 
+limb_length_percent = {
+    "Vestigial": {
+        "min": .01,
+        "max": .05
+    },
+    "Stubby": {
+        "min": .05,
+        "max": .25
+    },
+    "Short": {
+        "min": .25,
+        "max": .50
+    },
+    "Medium": {
+        "min": .50,
+        "max": 1
+    },
+    "Long": {
+        "min": 1,
+        "max": 1.5
+    }
+}
+
 # table 6e
 appendages = {
     "Endoskeleton": {
-        "Carnivore":{
+        "Carnivore": {
             "Hoof": .10,
             "Pincer": .15,
             "Paw": .96,
             "Prehensile": 1
         },
-        "Omnivore":{
+        "Omnivore": {
             "Hoof": .30,
             "Pincer": .40,
             "Paw": .95,
             "Prehensile": 1
         },
-        "Herbivore":{
+        "Herbivore": {
             "Hoof": .60,
             "Pincer": .65,
             "Paw": .97,
@@ -481,39 +517,39 @@ appendages = {
         }
     },
     "Exoskeleton": {
-        "Carnivore":{
+        "Carnivore": {
             "Hoof": .30,
             "Pincer": .96,
             "Paw": .97,
             "Prehensile": 1
         },
-        "Omnivore":{
+        "Omnivore": {
             "Hoof": .40,
             "Pincer": .96,
             "Paw": .98,
             "Prehensile": 1
         },
-        "Herbivore":{
+        "Herbivore": {
             "Hoof": .70,
             "Pincer": .96,
             "Paw": .99,
             "Prehensile": 1
         }
     },
-    "Muscoskeleton":{
-        "Carnivore":{
+    "Muscoskeleton": {
+        "Carnivore": {
             "Hoof": .03,
             "Pincer": .12,
             "Paw": .20,
             "Prehensile": 1
         },
-        "Omnivore":{
+        "Omnivore": {
             "Hoof": .02,
             "Pincer": .10,
             "Paw": .20,
             "Prehensile": 1
         },
-        "Herbivore":{
+        "Herbivore": {
             "Hoof": .01,
             "Pincer": .05,
             "Paw": .10,
@@ -558,7 +594,7 @@ body_coverage = {
             "Shelled": 1
 
         },
-# Exoskeletal creatures always have a shell - The roll is for the outer shell
+        # Exoskeletal creatures always have a shell - The roll is for the outer shell
         "Exoskeleton": {
             "Smooth/Slick": .55,
             "Scaly/Pebbled": .65,
@@ -571,7 +607,7 @@ body_coverage = {
             "Smooth/Slick": .70,
             "Scaly/Pebbled": .75,
             "Hairy/Furry": .80,
-            #"Feathery": 1.5,
+            # "Feathery": 1.5,
             "Shelled": 1
 
         }
@@ -614,7 +650,7 @@ coloration = {
         "Yellow": .80,
         "Green": .85,
         "Blue": .92,
-        "Purple":  1
+        "Purple": 1
 
     },
     "Feathery": {
@@ -643,6 +679,7 @@ coloration = {
         "Purple": 1
     }
 }
+#TODO: implement last two tables
 # table 7b
 pattern = {}
 # table 8
