@@ -122,8 +122,8 @@ class Fauna(object):
 
     def _str_neck_tail(self):
         neck_and_tail = ""
-        if self.body_features["neck"] == "None":
+        if self.body_features["neck"] == "No Neck":
             neck_and_tail += "no neck"
-        elif self.body_features["neck"] != "None":
+        elif self.body_features["neck"] != "No Neck":
             neck_and_tail += "a %s reaching %s meters on average" % (self.body_features["neck"], self.body_features["neck_length"])
         return neck_and_tail + " and they have " + self.body_features["tail"]
